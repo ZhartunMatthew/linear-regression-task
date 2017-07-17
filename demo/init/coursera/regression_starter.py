@@ -6,9 +6,9 @@ import random
 data = com.load_data('data/ex1data1.txt')
 
 # testing compute_cost function
-print('For theta [0, 0] cost function result smth like 32.0')
+print('For theta [0, 0] cost function result something like 32.0')
 print('For computed result for theta [0, 0]: %.4f' % lr.compute_cost_function(data[:, 0], data[:, 1], [0, 0]))
-print('For theta [-1, 2] cost function result smth like 54.5')
+print('For theta [-1, 2] cost function result something like 54.5')
 print('For computed result for theta [-1, 2]: %.4f' % lr.compute_cost_function(data[:, 0], data[:, 1], [-1, 2]))
 
 # getting separated x and y data for descent
