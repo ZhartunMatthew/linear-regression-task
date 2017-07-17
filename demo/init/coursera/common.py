@@ -2,11 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def warm_up():
-    identity_matrix = np.identity(5, int)
-    return identity_matrix
-
-
 def load_data(path):
     input_file = open(path)
     output_data = []
@@ -16,15 +11,25 @@ def load_data(path):
     return np.array(output_data)
 
 
-def display_data(data, hypothesis=None):
+def display_convergence(data):
+    descent_plot_data = np.array(data)
+    descent_plot = plt.figure().add_subplot(111)
+    plt.xlabel('Iteration, N')
+    plt.ylabel('Cost function, J')
+    plt.title('Cost function convergence')
+    descent_plot.plot(descent_plot_data[:, 0], descent_plot_data[:, 1])
+
+
+def display_regression(data, hypothesis=None):
     x_data = data[:, 0]
     y_data = data[:, 1]
-    plt.scatter(x_data, y_data, s=10)
+    plot_regression = plt.figure().add_subplot(111)
+    plot_regression.scatter(x_data, y_data, s=10)
     plt.xlabel('Population size, 10.000')
     plt.ylabel('Profit, $10.000')
-    plt.title('Plot')
+    plt.title('Linear regression')
     if hypothesis is not None:
-        plt.plot(x_data, hypothesis, color='red')
+        plot_regression.plot(x_data, hypothesis, color='red')
     plt.show()
 
 
