@@ -41,7 +41,7 @@ def compute_linear_regression():
 
     # displaying results
     # if regression with one variable plot will be displayed
-    lables = ['x-axis', 'y-axis', 'title']
-    mc.display_results(data, theta, [mc.hyp_value(x, theta) for x in x_data], lables)
+    labels = ['x-axis', 'y-axis', 'title']
+    mc.display_results(data, theta, [mc.hyp_value(x, theta) for x in x_data], labels)
 
 compute_linear_regression()
