@@ -4,7 +4,7 @@ import random
 
 
 def compute_linear_regression():
-    data = mc.load_data('data/ex1data1.txt')
+    data = mc.load_data('data/ex1data2.txt')
 
     # getting separated x and y data for descent and cost function
     x_data = data[:, :-1]
@@ -19,8 +19,11 @@ def compute_linear_regression():
     #   - J-function on plot increase instead of decrease
     # increase alpha if:
     #   - J-function on plot decrease too slow or looks like linear function
-    #   - convergence finished after first iteration
-    alpha = pow(10, -4)
+    #   - descent finished after first iteration or very fast
+    #   - descent finished all iterations, but regression looks even not close to true
+    # for ex1data1.txt alpha = 0.01 is perfect choice
+    # for ex1data2.txt alpha = 0.01 if too big, 10**(-10) - 10**(-7) is better choice
+    alpha = pow(10, -7)
 
     # if cost function not converged, descent will stop after all iterations
     iterations = 10000
@@ -38,6 +41,7 @@ def compute_linear_regression():
 
     # displaying results
     # if regression with one variable plot will be displayed
-    mc.display_results(data, theta)
+    lables = ['x-axis', 'y-axis', 'title']
+    mc.display_results(data, theta, [mc.hyp_value(x, theta) for x in x_data], lables)
 
 compute_linear_regression()

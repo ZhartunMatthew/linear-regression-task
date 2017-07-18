@@ -21,9 +21,7 @@ def display_convergence(data):
     plt.xlabel('Iteration, N')
     plt.ylabel('Cost function, J')
     plt.title('Cost function convergence')
-    print(convergence_plot_data)
     convergence_plot.plot(convergence_plot_data[:, 0], convergence_plot_data[:, 1])
-    plt.show()
 
 
 def hyp_value(x, theta):
@@ -35,7 +33,7 @@ def mean_normalize(lst):
 
 
 def compare_theta(a, b):
-    delta = 0.0001
+    delta = 0.000001
     for i in range(len(a)):
         if abs(a[i] - b[i]) > delta:
             return False
@@ -45,25 +43,25 @@ def compare_theta(a, b):
 
 def display_results(data, theta, hypothesis=None, labels=None):
     display_regression_coefficients(theta)
-    if len(data[0]) == 2:
+    if len(data[0]) == 3:
         display_regression_plot(data, hypothesis, labels)
+
+    plt.show()
 
 
 def display_regression_plot(data, hypothesis=None, labels=None):
-    x_data = data[:, 0]
-    y_data = data[:, 1]
+    x_data = data[:, 1]
+    y_data = data[:, 2]
     plot_regression = plt.figure().add_subplot(111)
     plot_regression.scatter(x_data, y_data, s=10)
 
     if labels is not None:
         plt.xlabel(labels[0])
         plt.ylabel(labels[1])
-        plt.title(labels[3])
+        plt.title(labels[2])
 
     if hypothesis is not None:
         plot_regression.plot(x_data, hypothesis, color='red')
-
-    plt.show()
 
 
 def display_regression_coefficients(theta):
