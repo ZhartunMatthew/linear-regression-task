@@ -4,13 +4,12 @@ import random
 
 
 def compute_linear_regression():
-    data = mc.load_data('data/ex1data2.txt')
+    data = mc.load_data('data/ex1data1.txt')
 
     # getting separated x and y data for descent and cost function
+    # and normalization x-data
     x_data = mc.normalize_all(data[:, :-1])
     y_data = data[:,  -1]
-
-    print(data)
 
     # generating random start theta (or coefficients on linear regression)
     theta = [random.uniform(0, 1) for i in range(len(x_data[0]))]
@@ -23,9 +22,9 @@ def compute_linear_regression():
     #   - J-function on plot decrease too slow or looks like linear function
     #   - descent finished after first iteration or very fast
     #   - descent finished all iterations, but regression looks even not close to true
-    # for ex1data1.txt alpha = 0.01 is perfect choice
+    # for ex1data1.txt alpha = 0.01 is perfect choice (if data not normalize)
     # for ex1data2.txt alpha = 0.01 if too big, 10**(-10) - 10**(-7) is better choice (is not normalize)
-    # for ex1data2.txt alpha = 0.1 is perfect choice only if data is normalized
+    # if data normalized alpha = 0.1 is perfect choice for both examples
     alpha = pow(10, -1)
 
     # if cost function not converged, descent will stop after all iterations
