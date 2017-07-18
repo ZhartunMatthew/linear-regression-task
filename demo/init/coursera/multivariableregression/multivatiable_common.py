@@ -28,8 +28,15 @@ def hyp_value(x, theta):
     return sum(np.array(x) * np.array(theta))
 
 
-def mean_normalize(lst):
-    return lst
+def normalize_all(data):
+    for i in range(1, len(data[0])):
+        data[:, i] = scale_normalize(data[:, i])
+
+    return data
+
+
+def scale_normalize(lst):
+    return lst / np.mean(lst)
 
 
 def compare_theta(a, b):
