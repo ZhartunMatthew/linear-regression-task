@@ -12,10 +12,10 @@ def compute_linear_regression():
     y_data = data[:, 1]
 
     # testing compute_cost function
-    print('For theta [0, 0] cost function result smth like 32.0')
-    print('For theta [0, 0] cost function computed result:  %.4f' % lr.compute_cost_function(x_data, y_data, [0, 0]))
-    print('For theta [-1, 2] cost function result smth like 54.5')
-    print('For theta [-1, 2] cost function computed result:  %.4f' % lr.compute_cost_function(x_data, y_data, [-1, 2]))
+    print('For theta [0, 0] expected cost function result: 32.0')
+    print('For theta [0, 0] computed cost function result: %.4f' % lr.compute_cost_function(x_data, y_data, [0, 0]))
+    print('For theta [-1, 2] expected cost function result: 54.5')
+    print('For theta [-1, 2] computed cost function result: %.4f' % lr.compute_cost_function(x_data, y_data, [-1, 2]))
 
     # generating random start theta (or coefficients on linear regression)
     theta = [random.uniform(0, 1), random.uniform(0, 1)]
