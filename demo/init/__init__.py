@@ -1,1 +1,1 @@
-from coursera import regression_starter
+from coursera.simpleregression import regression_starter

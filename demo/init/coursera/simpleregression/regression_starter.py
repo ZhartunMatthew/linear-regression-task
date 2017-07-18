@@ -1,5 +1,5 @@
-from . import common as com
-from . import linear_regression as lr
+from demo.init.coursera.simpleregression import common as com
+from demo.init.coursera.simpleregression import linear_regression as lr
 import random
 
 
