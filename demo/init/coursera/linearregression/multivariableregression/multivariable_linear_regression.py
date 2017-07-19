@@ -1,5 +1,5 @@
 import numpy as np
-from demo.init.coursera.multivariableregression import multivatiable_common as mc
+from demo.init.coursera.linearregression.multivariableregression import multivatiable_common as mc
 
 
 def compute_cost_function(x_data, y_data, theta):

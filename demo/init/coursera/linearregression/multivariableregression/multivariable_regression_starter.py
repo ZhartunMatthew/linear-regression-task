@@ -1,11 +1,16 @@
-from demo.init.coursera.multivariableregression import multivatiable_common as mc
-from demo.init.coursera.multivariableregression import multivariable_linear_regression as mlr
-from demo.init.coursera.multivariableregression import multivatiable_normal_equation as mneq
+from demo.init.coursera.linearregression.multivariableregression import multivatiable_common as mc
+from demo.init.coursera.linearregression.multivariableregression import multivariable_linear_regression as mlr
+from demo.init.coursera.linearregression.multivariableregression import multivatiable_normal_equation as mneq
+from os.path import abspath
 import random
+
+one_variable_data_path = abspath('coursera/linearregression/data/ex1data1.txt')
+multi_variable_data_path = abspath('coursera/linearregression/data/ex1data2.txt')
+data_path = one_variable_data_path
 
 
 def compute_linear_regression():
-    data = mc.load_data('data/ex1data2.txt')
+    data = mc.load_data(data_path)
 
     # getting separated x and y data for descent and cost function
     # and normalization x-data
@@ -50,7 +55,7 @@ def compute_linear_regression():
 
 
 def compute_regression_normal_equation():
-    data = mc.load_data('data/ex1data2.txt')
+    data = mc.load_data(data_path)
     # data normalization for normal equation isn't necessary
     # this only for comparing results of gradient descent and normal equation
     x_data = mc.normalize_all(data[:, :-1])

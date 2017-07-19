@@ -1,5 +1,5 @@
 import numpy as np
-from demo.init.coursera.simpleregression import common as c
+from demo.init.coursera.linearregression.simpleregression import common as c
 
 
 def compute_cost_function(x_data, y_data, theta):

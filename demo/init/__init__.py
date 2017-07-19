@@ -1,2 +1,2 @@
-# from coursera.simpleregression import regression_starter
-from coursera.multivariableregression import multivariable_regression_starter
+# from coursera.linearregression.simpleregression import regression_starter
+from coursera.linearregression.multivariableregression import multivariable_regression_starter

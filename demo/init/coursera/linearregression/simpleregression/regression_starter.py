@@ -1,11 +1,14 @@
-from demo.init.coursera.simpleregression import common as com
-from demo.init.coursera.simpleregression import linear_regression as lr
+from demo.init.coursera.linearregression.simpleregression import common as com
+from demo.init.coursera.linearregression.simpleregression import linear_regression as lr
+from os.path import abspath
 import random
+
+data_path = abspath('coursera/linearregression/data/ex1data1.txt')
 
 
 def compute_linear_regression():
     # loading exercise data
-    data = com.load_data('data/ex1data1.txt')
+    data = com.load_data(data_path)
 
     # getting separated x and y data for descent and cost function
     x_data = data[:, 0]
