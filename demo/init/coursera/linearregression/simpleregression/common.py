@@ -6,7 +6,7 @@ def load_data(path):
     input_file = open(path)
     output_data = []
     for line in input_file:
-        one_row = line[:-2].split(',')
+        one_row = line.split(',')
         output_data.append([float(one_row[0]), float(one_row[1])])
     return np.array(output_data)
 

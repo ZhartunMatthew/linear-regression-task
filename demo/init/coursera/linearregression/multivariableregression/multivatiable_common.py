@@ -7,7 +7,7 @@ def load_data(path):
     output_data = []
     for line in input_file:
         one_row = ['1']
-        one_row += line[:-2].split(',')
+        one_row += line.split(',')
         output_data.append([float(x) for x in one_row])
 
     print('Input data info.')
