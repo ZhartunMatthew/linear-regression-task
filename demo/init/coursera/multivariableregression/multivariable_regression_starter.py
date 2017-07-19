@@ -1,10 +1,11 @@
 from demo.init.coursera.multivariableregression import multivatiable_common as mc
 from demo.init.coursera.multivariableregression import multivariable_linear_regression as mlr
+from demo.init.coursera.multivariableregression import multivatiable_normal_equation as mneq
 import random
 
 
 def compute_linear_regression():
-    data = mc.load_data('data/ex1data1.txt')
+    data = mc.load_data('data/ex1data2.txt')
 
     # getting separated x and y data for descent and cost function
     # and normalization x-data
@@ -44,7 +45,23 @@ def compute_linear_regression():
     # displaying results
     # if regression with one variable plot will be displayed
     prediction = [mc.hyp_value(x, theta) for x in x_data]
-    labels = ['X-axis', 'Y-axis', 'Title']
+    labels = ['X-axis', 'Y-axis', 'Gradient descent']
     mc.display_results(data, theta, prediction, labels)
 
+
+def compute_regression_normal_equation():
+    data = mc.load_data('data/ex1data2.txt')
+    # data normalization for normal equation isn't necessary
+    # this only for comparing results of gradient descent and normal equation
+    x_data = mc.normalize_all(data[:, :-1])
+    y_data = data[:,  -1]
+
+    theta = mneq.compute_normal_equation(x_data, y_data)
+    prediction = [mc.hyp_value(x, theta) for x in x_data]
+    labels = ['X-axis', 'Y-axis', 'Normal equation']
+    mc.display_results(data, theta, prediction, labels)
+
+
 compute_linear_regression()
+compute_regression_normal_equation()
+mc.display_all_plots()

@@ -53,6 +53,8 @@ def display_results(data, theta, hypothesis=None, labels=None):
     if len(data[0]) == 3:
         display_regression_plot(data, hypothesis, labels)
 
+
+def display_all_plots():
     plt.show()
 
 
