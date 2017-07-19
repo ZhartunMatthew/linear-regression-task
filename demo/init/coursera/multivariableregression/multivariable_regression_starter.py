@@ -56,6 +56,7 @@ def compute_regression_normal_equation():
     x_data = mc.normalize_all(data[:, :-1])
     y_data = data[:,  -1]
 
+    print('\nNormal equation started...')
     theta = mneq.compute_normal_equation(x_data, y_data)
     prediction = [mc.hyp_value(x, theta) for x in x_data]
     labels = ['X-axis', 'Y-axis', 'Normal equation']
